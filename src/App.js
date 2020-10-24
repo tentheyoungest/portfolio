@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Routes from './Routes';
+import './assets/css/style.css';
+import './assets/css/custom-animation.css';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {isMobile} from 'react-device-detect';
+
+class App extends Component {
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+
+  handleScroll = () => {
+    const header = document.getElementById('header');
+    if (!isMobile) {
+      if (window.pageYOffset > 60) {
+        if (header) {
+          header.classList.add('fixed-header');
+        }
+      } else {
+        if (header) {
+          header.classList.remove('fixed-header');
+        }
+      }
+
+    } else {
+       console.log('mobile!');
+    }
+  }
+  
+render () {
+    return (
+      <Routes />
+    );
+  }
 }
 
 export default App;
