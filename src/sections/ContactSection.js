@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import emailjs from 'emailjs-com';
-import { isEmail } from '../utils/validation';
-
 import data from '../Data' ;
 import Title from '../components/Title';
 import SubTitle from '../components/SubTitle';
@@ -9,26 +7,14 @@ import bg from '../assets/img/Confetti-Doodles.svg';
 import upwork from '../assets/img/upwork-icon.png';
 import { render } from '@testing-library/react';
 
-
 const { contactDesc, contact } = data;
-//- 1. create the form component (input fields - name, email, subject, message)
-// 2. initialize state in constructor (setting to empty strings)
-// 3. hook up input fields to the state values
-// 4. 
- 
 
-
-// const ContactSection = () =>
 class ContactSection extends React.Component {
     constructor(props) {
         super();
         this.state = {
             fields: {},
             errors: {},
-        // name: '',
-        // email: '',
-        // subject: '',
-        // message: '',
             author: process.env.REACT_APP_AUTHOR,
             serviceId: process.env.REACT_APP_EMAILJS_SERVICE_ID,
             tempId: process.env.REACT_APP_EMAILJS_TEMP_ID,
@@ -47,15 +33,18 @@ class ContactSection extends React.Component {
     }
 
     submitFormHandler = (e) => {
-        console.log(this.validateFormHandler());
-
         e.preventDefault();
+        const { serviceId, tempId, userId } = this.state;
         if(this.validateFormHandler()) {
-            console.log(this.state);
-
-            // this.setState({fields: fields});
-            console.log(this.state);
-            alert("Form submitted");
+            this.setState({ name: '', email: '', subject: '', message: '' });
+            emailjs.sendForm(serviceId, tempId, e.target, userId).then(
+                result => {
+                    alert( 'Thank you for messaging me, I will reply as soon as I read your message!');
+                },
+                error => {
+                    alert('Unfortunately, your message cannot send right now. Please try again later or you may reach me through my social media accounts');
+                }
+            );
         }
 
     }
@@ -65,22 +54,24 @@ class ContactSection extends React.Component {
         let errors = {};
         let formIsValid = true;
 
-        // name, email,subject,message
         if(!fields["name"]) {
             formIsValid = false;
             errors["name"] = "Please enter your name";
         }
 
-        if(typeof fields["name"] !== "undefined") {
-            if(!fields["name".match(/^[a-zA-Z]*$/)]) {
-                formIsValid = false;
-                errors["name"] = "Please enter alphabet characters only.";
-            }
-        }
-
         if(!fields["email"]){
             formIsValid = false;
             errors["email"] = "Please enter your email";
+        }
+
+        if(!fields["subject"]){
+            formIsValid = false;
+            errors["subject"] = "Please don't leave this field empty";
+        }
+
+        if(!fields["message"]){
+            formIsValid = false;
+            errors["message"] = "Please don't leave this field empty";
         }
 
         if(typeof fields["email"] !== "undefined") {
@@ -99,8 +90,7 @@ class ContactSection extends React.Component {
     }
 
     render() {
-        // const { name, email, subject, message, author } = this.state.fields;
-        const { errors } = this.state;
+        const { errors, name, email, subject, message, author } = this.state;
         return(
         <section id="contact" className="section-container-min"
         style={{backgroundImage: `url(${bg})`}}>
@@ -149,14 +139,13 @@ class ContactSection extends React.Component {
                     <div className="col-2 body">
                     <div className="contact-form">
                         <form 
-                            // action="#" 
                             className="contact-form-inner"
                             onSubmit={this.submitFormHandler}
                             noValidate
                             >
                             <div className="text-field">
                                 <input
-                                    value={this.state.fields.name}
+                                    value={name}
                                     name="name"
                                     onChange={this.changeHandler}
                                     type="text"
@@ -164,19 +153,12 @@ class ContactSection extends React.Component {
                                     placeholder="Name"
                                     required
                                     autoComplete="off"
-                                    // maxLength="50"
-                                    noValidate
-                                />
+                                    noValidate />
                                 <div className="error-message">{errors.name}</div> 
-                                {/* <div className='invalid-feedback'> 
-                                    Please provide a valid name
-                                </div>
-                                <div className='valid-feedback'>Looks good!</div>*/}
-
                             </div>
                             <div className="text-field">
                                 <input 
-                                    value={this.state.fields.email}
+                                    value={email}
                                     name="email"
                                     onChange={this.changeHandler}
                                     type="email"
@@ -184,56 +166,37 @@ class ContactSection extends React.Component {
                                     placeholder="Email"
                                     required
                                     autoComplete="off"
-                                    noValidate
-                                />
+                                    noValidate />
                                 <div className="error-message">{errors.email}</div> 
-                                {/* <div className='invalid-feedback'> 
-                                    Please provide a valid email
-                                </div>
-                                <div className='valid-feedback'>Looks good!</div>*/}
-
                             </div>
                             <div className="text-field">
                                 <input
-                                    value={this.state.fields.subject}
+                                    value={subject}
                                     name="subject"
                                     onChange={this.changeHandler}
                                     type="text"
                                     className=""
                                     placeholder="Subject"
                                     required
-                                    autoComplete="off"
-                                    // maxLength="30"
-                                />
-                                <div className="error-message">{errors.subject}</div> 
-                                {/* <div className='invalid-feedback'> 
-                                    Please provide a valid subject
-                                </div>
-                                <div className='valid-feedback'>Looks good!</div>*/}
-
+                                    autoComplete="off" />
+                                <div className="error-message">{errors.subject}</div>
                             </div>
                             <div className="form-group">
                                 <textarea 
                                     id="message"
-                                    value={this.state.fields.message}
+                                    value={message}
                                     name="message" 
                                     onChange={this.changeHandler}
                                     type="text"
                                     className=""
                                     placeholder="Message"
                                     required
-                                    autoComplete="off"
-                                    // maxLength="1000" 
-                                >   
+                                    autoComplete="off" >   
                                 </textarea>
-                                <div className="error-message">{errors.mail}</div> 
-                                {/* <div className='invalid-feedback'> 
-                                    Please provide a valid message
-                                </div>
-                                <div className='valid-feedback'>Looks good!</div>*/}
-
-                                <input type='hidden' value={this.state.fields.author} name='author' />
-                                <input type='hidden' value={this.state.fields.email} name='reply_to' />
+                                <div className="error-message">{errors.message}</div> 
+                                
+                                <input type='hidden' value={author} name='author' />
+                                <input type='hidden' value={email} name='reply_to' />
                             </div>
                             <div className="form-button">
                                 <button type="submit" className="btn primary-btn">SEND</button>

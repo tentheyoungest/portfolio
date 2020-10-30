@@ -1,10 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-/* 
-components
-responsiveness
-animation
-functionality
-*/
 * {
     padding: 0;
     margin: 0;
@@ -101,15 +95,16 @@ a.nav-link {
 /* =============================== */
 /*  */
 .modal {
+  z-index: 9999;
   position: absolute;
   top: 50%;
   left: 50%;
   display: block;
   padding: 2em;
   min-width: 20em;
-  max-width: 70%;
+  max-width: 80%;
   min-height: 10%;
-  max-height: 50%;
+  max-height: 80%;
   overflow-y: scroll;
   color: #6c757d;
   transform: translate(-50%, -50%);
@@ -136,7 +131,47 @@ a.nav-link {
 }
 
 .modal-container {
+  
+}
 
+.modal-gallery.show {
+  height: 50%;
+  width: auto;
+  object-fit: contain;
+  background: rgba(34,34,34,.57);
+  padding: 5px;
+}
+
+.modal-gallery {
+  flex-direction: row;
+  overflow: scroll;
+  width: 100%;
+  white-space: nowrap;
+  display: inline-block;
+  margin: 1em 0;
+}
+
+img.modal-image, .gallery-item {
+  flex: 1;
+  cursor: pointer;
+  height: 65px;
+  width: 100px;
+  object-fit: contain;
+  background: rgba(34,34,34,.57);
+  padding: 5px;
+}
+
+img.portfolio-image.active {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  transition: transform .2s;
+}
+
+img.portfolio-image.active:hover {
+  transform: scale(1.20);
 }
 
 .overlay {
@@ -269,7 +304,7 @@ a.nav-link {
   color: #fff;
 }
 
-.item-title {
+.item-title, .item-title a {
   font-size: 1rem;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
@@ -278,6 +313,8 @@ a.nav-link {
   display: block;
   color: #fff;
   text-align: left;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 .item-desc {
@@ -695,8 +732,12 @@ img.work-logo {
   width: 100%;
   border: 2px solid #2bcfff;
   text-align: center;
-  padding: 25px 0 0 25px;
+  padding: 25px;
   margin: 25px 0 40px 0;
+}
+
+.about-item ul li {
+  padding-bottom: 10px;
 }
 
 /* =============================== */
@@ -832,7 +873,7 @@ ul.portfolio-item {
   color: #6c757d;
 }
 
-.modal-container > span.portfolio-icon {
+.modal > span.portfolio-icon {
   text-align: right;
   display: flex;
   justify-content: flex-end;
@@ -938,6 +979,13 @@ p.contact-icon-group > a {
   font-size: .65rem;
   color: #28a745;
 }
+
+.error-message {
+  font-size: .75rem;
+  color: red;
+  text-align: center;
+  margin-top: .25rem;
+}
 /* =============================== */
 /* 404 - START */
 /* =============================== */
@@ -990,6 +1038,9 @@ i.fas.fa-frown-open {
     p.contact-icon-group > a {
       font-size: .60rem;
     }
+    #home .col-2.body {
+      display: none;
+    }
 }
 
 /* Phones */
@@ -1001,7 +1052,7 @@ i.fas.fa-frown-open {
     }
 
     #header > .nav > ul {
-      /* display: none; */
+      display: none;
     }
 
     #header {
@@ -1049,10 +1100,23 @@ i.fas.fa-frown-open {
       width: 165px;
       margin: 5px auto;
     }
-    .dev-clip {
+    #home .col-2 {
+      margin: auto;
+      display: flex;
+      padding: 0;
+    }
+    #home .col-2.body {
+      display: none;
+    }
+    .home-caption {
+      flex: 1;
+      /* justify-content: end;
+      align-items: end; */
+    }
+    /* .dev-clip {
       width: 100%;
       padding: 10px;
-    }
+    } */
     .about-item > p {
       padding: 25px 0 0 0;
     }

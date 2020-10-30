@@ -1,4 +1,4 @@
-import React, { Component, PureComponent } from 'react';
+import React from 'react';
 import Loader from 'react-loader-spinner';
 
 import Header from '../components/includes/Header';

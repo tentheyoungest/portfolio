@@ -3,8 +3,6 @@ import Title from '../components/Title';
 import ItemTitle from '../components/ItemTitle';
 import ItemDesc from '../components/ItemDesc';
 import ServiceCard from '../components/ServiceCard';
-import ModalContainer from '../components/ModalContainer';
-import Modal from 'react-modal';
 import rd from '../assets/img/services/responsive-design.png';
 import cw from '../assets/img/services/custom-wordpress.png';
 
@@ -19,21 +17,14 @@ const ServicesSection = () =>
                     <div className="service-group">
                         <ServiceCard>
                             <img className="services-img" src={cw} alt={cw} />
-                            <ItemTitle>Custom WordPress Development</ItemTitle>
-                            <ItemDesc>Custom Fields, Templates and Child Theme</ItemDesc>
+                            <ItemTitle>WordPress Website Development</ItemTitle>
+                            <ItemDesc>Custom Fields, Child Theme and E-commerce</ItemDesc>
                         </ServiceCard>
                         <ServiceCard>
                             <img className="services-img" src={rd} alt={rd} />
                             <ItemTitle>Responsive Design</ItemTitle>
-                            <ItemDesc>Lorem Custom Fields, Templates and Child Theme Custom Fields, Templates and Child Theme</ItemDesc>
+                            <ItemDesc>Convert Mockup Designs to Responsive Website</ItemDesc>
                         </ServiceCard>
-                        <ServiceCard>
-                            <img className="services-img" src={rd} alt={rd} />
-                            <ItemTitle>Lorem</ItemTitle>
-                            <ItemDesc>Lorem Custom Fields, Templates and Child Theme</ItemDesc>
-                        </ServiceCard>
-                        {/* <button onClick={this.handleOpenModal}>Trigger Modal</button> */}
-                        {/* <button onClick={this.props.toggleModal}>Open modal</button> */}
                     </div>
                 </div> 
             </div>

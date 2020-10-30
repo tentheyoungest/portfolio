@@ -1,6 +1,6 @@
 export default {
     jobTitle: '< Front-End Developer />',
-    aboutCaption: 'I enjoy learning new things and for me, the most fulfilling experience of being a Dev is when he / she finishes projects!',
+    aboutCaption: 'I enjoy learning new things and for me, the most fulfilling experience of being a developer is when he / she finishes projects!',
     skillsDesc: 'Skills Description',
     portfolioDesc: 'Lorem Ipsum',
     contactDesc: 'Reach me out through my social media accounts',
@@ -46,6 +46,7 @@ export default {
         {
             degree: 'Bachelor of Science in Information Technology (BSIT)',
             school: 'Pangasinan State University',
+            workDone: '90%',
             year: 'Class of 2019',
         },
     ],
@@ -55,6 +56,16 @@ export default {
             agency: 'Technical Education and Skills Development Authority (TESDA)',
             certificationNo: 'ULI: BJB-98-531-01055-001',
             expiration: 'May 2018 - May 2023',
+        },
+        {
+            title: 'Introduction to Search Engine Optimization',
+            agency: 'Coursera - University of California, Davis',
+            certificate: 'https://www.coursera.org/verify/W4USQ3RQU4C4',
+        },
+        {
+            title: 'AWS Fundamentals: Going Cloud-Native',
+            agency: 'Coursera - Amazon Web Services',
+            certificate: 'https://www.coursera.org/account/5DJSVKMMJ9Y8',
         },
     ],
     skills: [
@@ -118,9 +129,12 @@ export default {
             img: {
                 list: [
                     require('./assets/img/logos/Delicious Diet.png'),
-                    require('./assets/img/logos/Oxecure.png'),
+                    require('./assets/img/dd/Delicious Diet - Checkout.png'),
+                    require('./assets/img/dd/Delicious Diet - KetoActive.png'),
+                    require('./assets/img/dd/Delicious Diet - Mobile.png'),
                 ]
             },
+            workDone: '90%',
             year: '2020',
             status: 'In Progress',
             textStacks: [
@@ -153,9 +167,12 @@ export default {
             img: {
                 list: [
                     require('./assets/img/logos/Oxecure.png'),
-                    require('./assets/img/logos/Oxecure.png'),
+                    require('./assets/img/oxecure/Oxecure - Home.png'),
+                    require('./assets/img/oxecure/Oxecure - Product Details.png'),
+                    require('./assets/img/oxecure/Oxecure - Mobile.png'),
                 ]
             },
+            workDone: '90%',
             year: '2020',
             status: 'Completed',
             textStacks: [
@@ -188,9 +205,12 @@ export default {
             img: {
                 list: [
                     require('./assets/img/logos/Snailwhite.png'),
-                    require('./assets/img/logos/Oxecure.png'),
+                    require('./assets/img/snailwhite/Snailwhite - Home.png'),
+                    require('./assets/img/snailwhite/Snailwhite - Blogs.png'),
+                    require('./assets/img/snailwhite/Snailwhite - Mobile.png'),
                 ]
             },
+            workDone: '90%',
             year: '2020',
             status: 'Completed',
             textStacks: [
@@ -223,9 +243,11 @@ export default {
             img: {
                 list: [
                     require('./assets/img/logos/Potato Corner.png'),
-                    require('./assets/img/logos/Oxecure.png'),
+                    require('./assets/img/potatocorner/Potato Corner - Menu.png'),
+                    require('./assets/img/potatocorner/Potato Corner - Mobile.png'),
                 ]
             },
+            workDone: '90%',
             year: '2020',
             status: 'Completed',
             textStacks: [
@@ -262,9 +284,11 @@ export default {
             img: {
                 list: [
                     require('./assets/img/logos/LIPAD - CRK.png'),
-                    require('./assets/img/logos/Oxecure.png'),
+                    require('./assets/img/crk/CRK - Airline Information.png'),
+                    require('./assets/img/crk/CRK - Mobile.png'),
                 ]
             },
+            workDone: '90%',
             year: '2019',
             status: 'Completed',
             textStacks: [
@@ -300,6 +324,7 @@ export default {
                     require('./assets/img/logos/Oxecure.png'),
                 ]
             },
+            workDone: '90%',
             year: '2019',
             status: 'Completed',
             textStacks: [
@@ -332,10 +357,12 @@ export default {
             img: {
                 list: [
                     require('./assets/img/logos/ATI.png'),
-                    require('./assets/img/logos/Oxecure.png'),
+                    require('./assets/img/ati/ATI - Home.png'),
+                    require('./assets/img/ati/ATI - Mobile.png'),
                 ]
             },
             logo: '',
+            workDone: '90%',
             year: '2019',
             status: 'Completed',
             textStacks: [
@@ -368,9 +395,11 @@ export default {
             img: {
                 list: [
                     require('./assets/img/logos/Optimal Inc.png'),
-                    require('./assets/img/logos/Oxecure.png'),
+                    require('./assets/img/optimal/Optimal - Products.png'),
+                    require('./assets/img/optimal/Optimal - Mobile.png'),
                 ]
             },
+            workDone: '90%',
             year: '2020',
             status: 'Completed',
             textStacks: [

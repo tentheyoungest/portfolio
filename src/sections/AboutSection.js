@@ -68,7 +68,7 @@ const AboutSection = () =>
                     <ul className="">
                         {certification.map(cert => (
                             <li key={cert.title}>
-                            <ItemTitle>{cert.title}</ItemTitle>
+                            <ItemTitle><a href={cert.certificate}>{cert.title}</a></ItemTitle>
                             <ItemDesc>{cert.agency}</ItemDesc>
                             <ItemDesc>{cert.certificationNo}</ItemDesc>
                             <ItemDesc>{cert.expiration}</ItemDesc>
