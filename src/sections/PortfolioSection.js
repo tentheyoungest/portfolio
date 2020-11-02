@@ -14,9 +14,9 @@ const { portfolios } = data;
 
 // const PortfolioSection = () =>
 class PortfolioSection extends Component {
-    state = {
-        active: null,
-    }
+//     state = {
+//         active: null,
+//     }
     
 
 render() {
@@ -48,15 +48,10 @@ render() {
                                                                  </span>)}
                                                             </p>
                                                         </div>
-                                                        <div className="modal-gallery show">
-                                                            <img className="portfolio-image active" src={item.img.list[1]} alt={item.title} />
-                                                        </div>
                                                         <div className="modal-gallery">
-                                                        {item.img.list.map((e, index) => (
-                                                                <img src={e} key={index} alt={index} className="gallery-item"/>
-                                                            ))}
+                                                            <img className="portfolio-image" src={item.img.list[1]} alt={item.title} />
                                                         </div>
-                                                        </ModalContainer>
+                                                       </ModalContainer>
                                                   </div>
                                              </div>
                                         </PortfolioCard>
@@ -79,16 +74,10 @@ render() {
                                                                 <i className={textStack.icon} />
                                                                 </span>)}
                                                             </p>
+                                                        </div> <div className="modal-gallery">
+                                                            <img className="portfolio-image" src={filteredItem.img.list[1]} alt={filteredItem.title} />
                                                         </div>
-                                                        <div className="modal-gallery">
-                                                                <img className="modal-image" src={filteredItem.img.list[1]} alt={filteredItem.title} />
-                                                        </div>
-                                                        <div className="modal-gallery">
-                                                            {filteredItem.img.list.map((e, index) => (
-                                                                <img src={e} key={index} alt={index} className="gallery-item"/>
-                                                            ))}
-                                                        </div>
-                                                        </ModalContainer>
+                                                       </ModalContainer>
                                                   </div>
                                              </div>
                                         </PortfolioCard>

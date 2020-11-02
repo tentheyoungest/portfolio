@@ -65,7 +65,7 @@ export default {
         {
             title: 'AWS Fundamentals: Going Cloud-Native',
             agency: 'Coursera - Amazon Web Services',
-            certificate: 'https://www.coursera.org/account/5DJSVKMMJ9Y8',
+            certificate: 'https://www.coursera.org/verify/5DJSVKMMJ9Y8',
         },
     ],
     skills: [
@@ -129,10 +129,8 @@ export default {
             img: {
                 list: [
                     require('./assets/img/logos/Delicious Diet.png'),
-                    require('./assets/img/dd/Delicious Diet - Checkout.png'),
-                    require('./assets/img/dd/Delicious Diet - KetoActive.png'),
-                    require('./assets/img/dd/Delicious Diet - Mobile.png'),
-                ]
+                    require('./assets/img/projects/Delicious Diet.png'),
+                   ]
             },
             workDone: '90%',
             year: '2020',
@@ -167,9 +165,7 @@ export default {
             img: {
                 list: [
                     require('./assets/img/logos/Oxecure.png'),
-                    require('./assets/img/oxecure/Oxecure - Home.png'),
-                    require('./assets/img/oxecure/Oxecure - Product Details.png'),
-                    require('./assets/img/oxecure/Oxecure - Mobile.png'),
+                    require('./assets/img/projects/Oxecure.png'),
                 ]
             },
             workDone: '90%',
@@ -205,9 +201,7 @@ export default {
             img: {
                 list: [
                     require('./assets/img/logos/Snailwhite.png'),
-                    require('./assets/img/snailwhite/Snailwhite - Home.png'),
-                    require('./assets/img/snailwhite/Snailwhite - Blogs.png'),
-                    require('./assets/img/snailwhite/Snailwhite - Mobile.png'),
+                    require('./assets/img/projects/Snailwhite.png'),
                 ]
             },
             workDone: '90%',
@@ -243,8 +237,7 @@ export default {
             img: {
                 list: [
                     require('./assets/img/logos/Potato Corner.png'),
-                    require('./assets/img/potatocorner/Potato Corner - Menu.png'),
-                    require('./assets/img/potatocorner/Potato Corner - Mobile.png'),
+                    require('./assets/img/projects/Potato Corner.png'),
                 ]
             },
             workDone: '90%',
@@ -284,8 +277,7 @@ export default {
             img: {
                 list: [
                     require('./assets/img/logos/LIPAD - CRK.png'),
-                    require('./assets/img/crk/CRK - Airline Information.png'),
-                    require('./assets/img/crk/CRK - Mobile.png'),
+                    require('./assets/img/projects/LIPAD - CRK.png'),
                 ]
             },
             workDone: '90%',
@@ -321,7 +313,7 @@ export default {
             img: {
                 list: [
                     require('./assets/img/logos/Province of Sorsogon.png'),
-                    require('./assets/img/logos/Oxecure.png'),
+                    require('./assets/img/projects/Province of Sorsogon.png'),
                 ]
             },
             workDone: '90%',
@@ -357,8 +349,7 @@ export default {
             img: {
                 list: [
                     require('./assets/img/logos/ATI.png'),
-                    require('./assets/img/ati/ATI - Home.png'),
-                    require('./assets/img/ati/ATI - Mobile.png'),
+                    require('./assets/img/projects/ATI.png'),
                 ]
             },
             logo: '',
@@ -395,8 +386,7 @@ export default {
             img: {
                 list: [
                     require('./assets/img/logos/Optimal Inc.png'),
-                    require('./assets/img/optimal/Optimal - Products.png'),
-                    require('./assets/img/optimal/Optimal - Mobile.png'),
+                    require('./assets/img/projects/Optimal Inc.png'),
                 ]
             },
             workDone: '90%',
